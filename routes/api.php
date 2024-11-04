@@ -10,3 +10,4 @@ Route::get('/user', function (Request $request) {
 
 //posts
 Route::apiResource('/tasks', App\Http\Controllers\Api\TaskController::class);
+Route::put('/tasks/{id}/complete', [App\Http\Controllers\Api\TaskController::class, 'complete']);

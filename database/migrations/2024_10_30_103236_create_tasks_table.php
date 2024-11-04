@@ -21,11 +21,16 @@ return new class extends Migration
         });
     }
 
+
     /**
      * Reverse the migrations.
      */
     public function down(): void
     {
+        Schema::table('tasks', function (Blueprint $table) {
         Schema::dropIfExists('tasks');
-    }
+        $table->dropColumn('is_completed');
+    
+});
+}
 };

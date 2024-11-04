@@ -77,6 +77,22 @@ class TaskController extends Controller
         return new TaskResource(true, 'Data Task Berhasil Di Update!', $tasks);
     }
 
+    public function complete($id)
+    {
+       $tasks = Task::find($id);
+
+       if (!$tasks) {
+        return response()->json(['message' => 'Data Tidak Ditemukan'], 404);
+    }
+
+        $tasks->update([
+        'is_completed' => true,
+    ]);
+
+    return new TaskResource(true, 'Task Berhasil Diselesaikan!', $tasks);
+    }
+
+
     // Menghapus todo
     public function destroy($id)
     {

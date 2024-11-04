@@ -18,6 +18,7 @@ class Task extends Model
         'nama_kegiatan',
         'tanggal',
         'deskripsi_kegiatan',
+        'is_completed',
     ];
 
     protected $casts = [

@@ -7,6 +7,7 @@ use Illuminate\Http\Resources\Json\JsonResource;
 
 class TaskResource extends JsonResource
 {
+    
     //define properti
     public $status;
     public $message;
@@ -39,6 +40,14 @@ class TaskResource extends JsonResource
             'success'   => $this->status,
             'message'   => $this->message,
             'data'      => $this->resource
+        ];
+
+        return [
+            'id' => $this->id,
+            'nama_kegiatan' => $this->nama_kegiatan,
+            'tanggal' => $this->tanggal,
+            'deskripsi_kegiatan' => $this->deskripsi_kegiatan,
+            'is_completed' => $this->is_completed,
         ];
     }
 }
